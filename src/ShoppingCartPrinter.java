@@ -11,6 +11,9 @@ public class ShoppingCartPrinter {
         int tempPrice;
         int tempQuantity;
         String newline;
+        int item1Price;
+        int item2Price;
+        int totalPrice;
 
         System.out.println("Item 1");
         System.out.println("Enter the item name:");
@@ -26,7 +29,7 @@ public class ShoppingCartPrinter {
         item1.setQuantity(tempQuantity);
 
         /*
-         *Before prompting for the second item 
+         *Before prompting for the second item
          *Call scnr.nextLine()
          *to allow the user to input a new string.
          */
@@ -44,5 +47,15 @@ public class ShoppingCartPrinter {
         System.out.println("Enter the item quantity:");
         tempQuantity = scnr.nextInt();
         item2.setQuantity(tempQuantity);
+
+        item1Price = item1.getQuantity() * item1.getPrice();
+        item2Price = item2.getQuantity() * item2.getPrice();
+        totalPrice = item1Price + item2Price;
+
+        System.out.println("TOTAL COST");
+        System.out.println(item1.getName() + " " + item1.getQuantity() + " @  $" + item1.getPrice() + " = $" + item1Price);
+        System.out.println(item2.getName() + " " + item2.getQuantity() + " @  $" + item2.getPrice() + " = $" + item1Price);
+        System.out.println();
+        System.out.println("Total: $" + totalPrice);
     }
 }
