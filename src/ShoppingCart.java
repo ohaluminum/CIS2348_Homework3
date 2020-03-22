@@ -136,8 +136,32 @@ public class ShoppingCart {
      */
     public void printTotal()
     {
+        if (cartItems.isEmpty())
+        {
+            System.out.println("SHOPPING CART IS EMPTY");
+        }
+        else
+        {
+            int subTotal = 0;
+            int total = 0;
 
+            System.out.println(customerName + "'s Shopping Cart - " + currentDate);
+            System.out.println("Number of Items: " + cartItems.size());
+            System.out.println();
+
+            for (int i = 0; i < cartItems.size(); i++)
+            {
+                subTotal = cartItems.get(i).getPrice() * cartItems.get(i).getQuantity();
+                System.out.println(cartItems.get(i).getName() + " " + cartItems.get(i).getQuantity() + " @ $" + cartItems.get(i).getPrice() + " = $" + subTotal);
+                total += subTotal;
+            }
+
+            System.out.println("Total: $" + total);
+        }
     }
+
+
+
 
     //printDescriptions(): Outputs each item's description.
     public void printDescription()
