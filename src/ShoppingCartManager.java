@@ -17,16 +17,18 @@ public class ShoppingCartManager
         String tempNewLine;
         ItemToPurchase tempItem;
 
+        System.out.println();
+        System.out.println("MENU");
+        System.out.println("a - Add item to cart");
+        System.out.println("d - Remove item from cart");
+        System.out.println("c - Change item quantity");
+        System.out.println("i - Output items' descriptions");
+        System.out.println("o - Output shopping cart");
+        System.out.println("q - Quit");
+        System.out.println("");
+
         while (true)
         {
-            System.out.println("MENU");
-            System.out.println("a - Add item to cart");
-            System.out.println("d - Remove item from cart");
-            System.out.println("c - Change item quantity");
-            System.out.println("i - Output items' descriptions");
-            System.out.println("o - Output shopping cart");
-            System.out.println("q - Quit");
-            System.out.println("");
             System.out.println("Choose an option:");
 
             userOption = scanner.next().charAt(0);
