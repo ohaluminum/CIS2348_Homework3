@@ -1,18 +1,22 @@
+import java.util.ArrayList;
+
 public class ShoppingCart {
     private String customerName;
     private String currentDate;
-
+    private ArrayList<ItemToPurchase> cartItems;
 
     public ShoppingCart()
     {
         customerName = "none";
         currentDate = "January 1, 2016";
+        cartItems = new ArrayList<ItemToPurchase>();
     }
 
     public ShoppingCart(String name, String date)
     {
         customerName = name;
         currentDate = date;
+        cartItems = new ArrayList<ItemToPurchase>();
     }
 
     public String getCustomerName()
@@ -28,7 +32,7 @@ public class ShoppingCart {
     //addItem(): Adds an item to cartItems array. Has parameter ItemToPurchase. Does not return anything.
     public void addItem(ItemToPurchase item)
     {
-
+        cartItems.add(item);
     }
 
     /*
