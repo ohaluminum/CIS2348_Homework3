@@ -3,14 +3,19 @@ import java.util.Scanner;
 
 public class ShoppingCartManager
 {
-    public static void printMenu(ShoppingCart cart)
+    /*
+     *Note: Creating multiple Scanner objects for the same input stream yields unexpected behavior.
+     *Thus, good practice is to use a single Scanner object for reading input from System.in.
+     *That Scanner object can be passed as an argument to any methods that read input.
+     */
+    public static void printMenu(ShoppingCart cart, Scanner scanner)
     {
         char userOption;
         String tempName;
         String tempDescription;
         int tempPrice;
         int tempQuantity;
-        char tempNewLine;
+        String tempNewLine;
         ItemToPurchase tempItem;
 
         while (true)
@@ -25,7 +30,7 @@ public class ShoppingCartManager
             System.out.println("");
             System.out.println("Choose an option:");
 
-            userOption = scnr.nextChar();
+            userOption = scanner.next();
 
             if (userOption == 'q')
             {
@@ -37,18 +42,18 @@ public class ShoppingCartManager
                 case 'a':
                     System.out.println("ADD ITEM TO CART");
                     System.out.println("Enter the item name:");
-                    tempName = scnr.nextLine();
+                    tempName = scanner.nextLine();
 
                     System.out.println("Enter the item description:");
-                    tempDescription = scnr.nextLine();
+                    tempDescription = scanner.nextLine();
 
                     System.out.println("Enter the item price:");
-                    tempPrice = scnr.nextInt();
+                    tempPrice = scanner.nextInt();
 
                     System.out.println("Enter the item quantity:");
-                    tempQuantity = scnr.nextInt();
+                    tempQuantity = scanner.nextInt();
 
-                    tempNewLine = scnr.nextLine();
+                    tempNewLine = scanner.nextLine();
 
                     tempItem = new ItemToPurchase(tempName, tempPrice, tempQuantity, tempDescription);
 
@@ -60,7 +65,7 @@ public class ShoppingCartManager
                     System.out.println("REMOVE ITEM FROM CART");
                     System.out.println("Enter name of item to remove:");
 
-                    tempName = scnr.nextLine();
+                    tempName = scanner.nextLine();
                     cart.removeItem(tempName);
 
                     break;
@@ -89,23 +94,22 @@ public class ShoppingCartManager
 
     public static void main(String[] args)
     {
-        Scanner scnr = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         String userName;
         String todayDate;
 
         System.out.println("Enter Customer's Name:");
-        userName = scnr.nextLine();
+        userName = scanner.nextLine();
 
         System.out.println("Enter Today's Date:");
-        todayDate = scnr.nextLine();
+        todayDate = scanner.nextLine();
 
         ShoppingCart cart = new ShoppingCart(userName, todayDate);
 
         System.out.println("Customer Name: " + cart.getCustomerName());
         System.out.println("Today's Date: " + cart.getDate());
 
-        printMenu(cart);
-
+        printMenu(cart, scanner);
     }
 }
 
