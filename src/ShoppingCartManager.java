@@ -17,21 +17,26 @@ public class ShoppingCartManager
         String tempNewLine;
         ItemToPurchase tempItem;
 
-        System.out.println();
-        System.out.println("MENU");
-        System.out.println("a - Add item to cart");
-        System.out.println("d - Remove item from cart");
-        System.out.println("c - Change item quantity");
-        System.out.println("i - Output items' descriptions");
-        System.out.println("o - Output shopping cart");
-        System.out.println("q - Quit");
-        System.out.println("");
-
         while (true)
         {
+            System.out.println();
+            System.out.println("MENU");
+            System.out.println("a - Add item to cart");
+            System.out.println("d - Remove item from cart");
+            System.out.println("c - Change item quantity");
+            System.out.println("i - Output items' descriptions");
+            System.out.println("o - Output shopping cart");
+            System.out.println("q - Quit");
+            System.out.println();
             System.out.println("Choose an option:");
 
             userOption = scanner.next().charAt(0);
+
+            while ((userOption != 'a') && (userOption != 'd') && (userOption != 'c') && (userOption != 'i') && (userOption != 'o') && (userOption != 'q'))
+            {
+                System.out.println("Choose an option:");
+                userOption = scanner.next().charAt(0);
+            }
 
             if (userOption == 'q')
             {
@@ -85,9 +90,6 @@ public class ShoppingCartManager
                 case 'o':
                     System.out.println("OUTPUT SHOPPING CART");
                     cart.printTotal();
-                    break;
-
-                default:
                     break;
             }
         }
