@@ -42,7 +42,23 @@ public class ShoppingCart {
      */
     public void removeItem(String name)
     {
+        int pos = -1;
+        boolean isFound = false;
 
+        for (int i = 0; i < cartItems.size(); i++)
+        {
+            if (cartItems.get(i).getName().equals(name))
+            {
+                pos = i;
+                isFound = true;
+                cartItems.remove(i);
+                break;
+            }
+        }
+        if (!isFound)
+        {
+            System.out.println("Nothing removed.");
+        }
     }
 
     /*
