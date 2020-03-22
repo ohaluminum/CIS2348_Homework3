@@ -103,6 +103,8 @@ public class ShoppingCartManager
         System.out.println("Enter Today's Date:");
         todayDate = scanner.nextLine();
 
+        System.out.println();
+
         ShoppingCart cart = new ShoppingCart(userName, todayDate);
 
         System.out.println("Customer Name: " + cart.getCustomerName());
