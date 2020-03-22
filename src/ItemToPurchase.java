@@ -7,17 +7,17 @@ public class ItemToPurchase {
     public ItemToPurchase()
     {
         itemName = "None";
+        itemDescription = "None";
         itemPrice = 0;
         itemQuantity = 0;
-        itemDescription = "None";
     }
 
-    public ItemToPurchase(String name, int price, int quantity, String description)
+    public ItemToPurchase(String name, String description, int price, int quantity)
     {
         itemName = name;
+        itemDescription = description;
         itemPrice = price;
         itemQuantity = quantity;
-        itemDescription = description;
     }
 
     public void setName(String name)

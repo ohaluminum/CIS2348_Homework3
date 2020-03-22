@@ -1,4 +1,3 @@
-import java.net.SocketOption;
 import java.util.Scanner;
 
 public class ShoppingCartManager
@@ -30,7 +29,7 @@ public class ShoppingCartManager
             System.out.println("");
             System.out.println("Choose an option:");
 
-            userOption = scanner.next();
+            userOption = scanner.next().charAt(0);
 
             if (userOption == 'q')
             {
