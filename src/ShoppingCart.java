@@ -118,7 +118,15 @@ public class ShoppingCart {
     //getCostOfCart(): Determines and returns the total cost of items in cart. Has no parameters.
     public int getCostOfCart()
     {
+        int totalCost = 0;
+        int subCost = 0;
 
+        for(int i = 0; i < cartItems.size(); i++)
+        {
+            subCost = cartItems.get(i).getPrice() * cartItems.get(i).getQuantity();
+            totalCost += subCost;
+        }
+        return totalCost;
     }
 
     /*
