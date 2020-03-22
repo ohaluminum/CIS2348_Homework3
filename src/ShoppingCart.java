@@ -160,12 +160,16 @@ public class ShoppingCart {
         }
     }
 
-
-
-
     //printDescriptions(): Outputs each item's description.
     public void printDescription()
     {
+        System.out.println(customerName + "'s Shopping Cart - " + currentDate);
+        System.out.println();
+        System.out.println("Item Description");
 
+        for (int i = 0; i < cartItems.size(); i++)
+        {
+            System.out.println(cartItems.get(i).getName() +": " + cartItems.get(i).getQuantity());
+        }
     }
 }
