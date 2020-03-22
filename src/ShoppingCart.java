@@ -106,7 +106,13 @@ public class ShoppingCart {
     //getNumItemsInCart(): Returns quantity of all items in cart. Has no parameters.
     public int getNumItemsInCart()
     {
+        int totalQuantity = 0;
 
+        for (int i = 0; i < cartItems.size(); i++)
+        {
+            totalQuantity += cartItems.get(i).getQuantity();
+        }
+        return totalQuantity;
     }
 
     //getCostOfCart(): Determines and returns the total cost of items in cart. Has no parameters.
