@@ -84,7 +84,7 @@ public class ShoppingCart {
                     cartItems.get(pos).setPrice(0);
                 }
 
-                if (cartItems.get(pos).getQuantity() != 0))
+                if (cartItems.get(pos).getQuantity() != 0)
                 {
                     cartItems.get(pos).setQuantity(0);
                 }
