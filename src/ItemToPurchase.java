@@ -12,6 +12,14 @@ public class ItemToPurchase {
         itemDescription = "None";
     }
 
+    public ItemToPurchase(String name, int price, int quantity, String description)
+    {
+        itemName = name;
+        itemPrice = price;
+        itemQuantity = quantity;
+        itemDescription = description;
+    }
+
     public void setName(String name)
     {
         itemName = name;
