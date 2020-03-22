@@ -2,12 +2,14 @@ public class ItemToPurchase {
     private String itemName;
     private int itemPrice;
     private int itemQuantity;
+    private String itemDescription;
 
     public ItemToPurchase()
     {
         itemName = "None";
         itemPrice = 0;
         itemQuantity = 0;
+        itemDescription = "None";
     }
 
     public void setName(String name)
@@ -25,6 +27,11 @@ public class ItemToPurchase {
         itemQuantity = quantity;
     }
 
+    public void setDescription(String description)
+    {
+        itemDescription = description;
+    }
+
     public String getName()
     {
         return itemName;
@@ -38,5 +45,20 @@ public class ItemToPurchase {
     public int getQuantity()
     {
         return itemQuantity;
+    }
+
+    public String getDescription()
+    {
+        return itemDescription;
+    }
+
+    public void printItemCost()
+    {
+        System.out.println(itemName + " " + itemQuantity + " @ $" + itemPrice + " = $" + (itemQuantity * itemPrice));
+    }
+
+    public void printItemDescription()
+    {
+        System.out.println(itemName + ": " + itemDescription);
     }
 }
