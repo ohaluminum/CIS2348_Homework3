@@ -69,7 +69,38 @@ public class ShoppingCart {
      */
     public void modifyItem(ItemToPurchase item)
     {
+        int pos = -1;
+        boolean isFound = false;
 
+        for (int i = 0; i < cartItems.size(); i++)
+        {
+            if (cartItems.get(i).getName().equals(item.getName()))
+            {
+                pos = i;
+                isFound = true;
+
+                if (cartItems.get(pos).getPrice() != 0)
+                {
+                    cartItems.get(pos).setPrice(0);
+                }
+
+                if (cartItems.get(pos).getQuantity() != 0))
+                {
+                    cartItems.get(pos).setQuantity(0);
+                }
+
+                if (cartItems.get(pos).getDescription() != "none")
+                {
+                    cartItems.get(pos).setDescription("none");
+                }
+                break;
+            }
+        }
+
+        if(!isFound)
+        {
+            System.out.println("Item not found in cart. Nothing modified.");
+        }
     }
 
     //getNumItemsInCart(): Returns quantity of all items in cart. Has no parameters.
