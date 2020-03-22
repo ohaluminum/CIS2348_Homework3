@@ -142,21 +142,16 @@ public class ShoppingCart {
         }
         else
         {
-            int subTotal = 0;
-            int total = 0;
-
             System.out.println(customerName + "'s Shopping Cart - " + currentDate);
             System.out.println("Number of Items: " + cartItems.size());
             System.out.println();
 
             for (int i = 0; i < cartItems.size(); i++)
             {
-                subTotal = cartItems.get(i).getPrice() * cartItems.get(i).getQuantity();
-                System.out.println(cartItems.get(i).getName() + " " + cartItems.get(i).getQuantity() + " @ $" + cartItems.get(i).getPrice() + " = $" + subTotal);
-                total += subTotal;
+                System.out.println(cartItems.get(i).getName() + " " + cartItems.get(i).getQuantity() + " @ $" + cartItems.get(i).getPrice() + " = $" + (cartItems.get(i).getPrice() * cartItems.get(i).getQuantity()));
             }
 
-            System.out.println("Total: $" + total);
+            System.out.println("Total: $" + getCostOfCart());
         }
     }
 
@@ -169,7 +164,7 @@ public class ShoppingCart {
 
         for (int i = 0; i < cartItems.size(); i++)
         {
-            System.out.println(cartItems.get(i).getName() +": " + cartItems.get(i).getQuantity());
+            System.out.println(cartItems.get(i).getName() +": " + cartItems.get(i).getDescription());
         }
     }
 }

@@ -54,7 +54,7 @@ public class ShoppingCartManager
 
                     tempNewLine = scanner.nextLine();
 
-                    tempItem = new ItemToPurchase(tempName, tempPrice, tempQuantity, tempDescription);
+                    tempItem = new ItemToPurchase(tempName, tempDescription, tempPrice, tempQuantity);
 
                     cart.addItem(tempItem);
 

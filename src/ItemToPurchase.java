@@ -1,8 +1,8 @@
 public class ItemToPurchase {
     private String itemName;
+    private String itemDescription;
     private int itemPrice;
     private int itemQuantity;
-    private String itemDescription;
 
     public ItemToPurchase()
     {
