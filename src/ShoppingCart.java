@@ -136,8 +136,15 @@ public class ShoppingCart {
      */
     public void printTotal()
     {
+        int numItems = 0;
+
+        for (int i = 0; i < cartItems.size(); i++)
+        {
+            numItems += cartItems.get(i).getQuantity();
+        }
+
         System.out.println(customerName + "'s Shopping Cart - " + currentDate);
-        System.out.println("Number of Items: " + cartItems.size());
+        System.out.println("Number of Items: " + numItems);
         System.out.println();
 
         if (cartItems.isEmpty())
