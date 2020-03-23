@@ -9,14 +9,14 @@ public class ShoppingCart {
     {
         customerName = "none";
         currentDate = "January 1, 2016";
-        cartItems = new ArrayList<ItemToPurchase>();
+        cartItems = new ArrayList<>();
     }
 
     public ShoppingCart(String name, String date)
     {
         customerName = name;
         currentDate = date;
-        cartItems = new ArrayList<ItemToPurchase>();
+        cartItems = new ArrayList<>();
     }
 
     public String getCustomerName()
@@ -113,7 +113,7 @@ public class ShoppingCart {
     public int getCostOfCart()
     {
         int totalCost = 0;
-        int subCost = 0;
+        int subCost;
 
         for(int i = 0; i < cartItems.size(); i++)
         {
@@ -142,7 +142,7 @@ public class ShoppingCart {
         {
             for (int i = 0; i < cartItems.size(); i++)
             {
-                System.out.println(cartItems.get(i).getName() + " " + cartItems.get(i).getQuantity() + " @ $" + cartItems.get(i).getPrice() + " = $" + (cartItems.get(i).getPrice() * cartItems.get(i).getQuantity()));
+                cartItems.get(i).printItemCost();
             }
         }
         System.out.println();
@@ -158,7 +158,7 @@ public class ShoppingCart {
 
         for (int i = 0; i < cartItems.size(); i++)
         {
-            System.out.println(cartItems.get(i).getName() +": " + cartItems.get(i).getDescription());
+            cartItems.get(i).printItemDescription();
         }
     }
 }
