@@ -69,8 +69,10 @@ public class ShoppingCart {
      */
     public void modifyItem(ItemToPurchase item)
     {
-        int pos = -1;
+        int pos;
         boolean isFound = false;
+        int itemPrice;
+        String itemDescription;
 
         for (int i = 0; i < cartItems.size(); i++)
         {
@@ -78,22 +80,17 @@ public class ShoppingCart {
             {
                 pos = i;
                 isFound = true;
+                itemPrice = cartItems.get(i).getPrice();
+                item.setPrice(itemPrice);
 
-                if (cartItems.get(pos).getPrice() != 0)
-                {
-                    cartItems.get(pos).setPrice(0);
-                }
-                if (cartItems.get(pos).getQuantity() != 0)
-                {
-                    cartItems.get(pos).setQuantity(0);
-                }
-                if (cartItems.get(pos).getDescription() != "none")
-                {
-                    cartItems.get(pos).setDescription("none");
-                }
+                itemDescription = cartItems.get(i).getDescription();
+                item.setDescription(itemDescription);
+
+                cartItems.set(pos, item);
                 break;
             }
         }
+
         if(!isFound)
         {
             System.out.println("Item not found in cart. Nothing modified.");
@@ -133,15 +130,8 @@ public class ShoppingCart {
      */
     public void printTotal()
     {
-        int numItems = 0;
-
-        for (int i = 0; i < cartItems.size(); i++)
-        {
-            numItems += cartItems.get(i).getQuantity();
-        }
-
         System.out.println(customerName + "'s Shopping Cart - " + currentDate);
-        System.out.println("Number of Items: " + numItems);
+        System.out.println("Number of Items: " + getNumItemsInCart());
         System.out.println();
 
         if (cartItems.isEmpty())
@@ -164,7 +154,7 @@ public class ShoppingCart {
     {
         System.out.println(customerName + "'s Shopping Cart - " + currentDate);
         System.out.println();
-        System.out.println("Item Description");
+        System.out.println("Item Descriptions");
 
         for (int i = 0; i < cartItems.size(); i++)
         {

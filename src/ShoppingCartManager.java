@@ -65,7 +65,6 @@ public class ShoppingCartManager
                     tempItem = new ItemToPurchase(tempName, tempDescription, tempPrice, tempQuantity);
 
                     cart.addItem(tempItem);
-
                     break;
 
                 case 'd':
@@ -74,12 +73,19 @@ public class ShoppingCartManager
 
                     tempName = scanner.nextLine();
                     cart.removeItem(tempName);
-
                     break;
 
                 case 'c':
                     System.out.println("CHANGE ITEM QUANTITY");
                     System.out.println("Enter the item name:");
+                    tempName = scanner.nextLine();
+                    System.out.println("Enter the new quantity:");
+                    tempQuantity = scanner.nextInt();
+
+                    tempItem = new ItemToPurchase();
+                    tempItem.setName(tempName);
+                    tempItem.setQuantity(tempQuantity);
+                    cart.modifyItem(tempItem);
 
                     break;
 
