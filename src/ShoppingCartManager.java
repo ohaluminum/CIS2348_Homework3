@@ -43,12 +43,12 @@ public class ShoppingCartManager
                 break;
             }
 
+            //Need to get rid of the newline character remaining from next() function
+            tempNewLine = scanner.nextLine();
+
             switch (userOption)
             {
                 case 'a':
-                    //Need to get rid of the newline character remaining from next() function
-                    tempNewLine = scanner.nextLine();
-
                     System.out.println("ADD ITEM TO CART");
                     System.out.println("Enter the item name:");
                     tempName = scanner.nextLine();

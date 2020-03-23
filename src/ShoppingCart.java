@@ -57,7 +57,7 @@ public class ShoppingCart {
         }
         if (!isFound)
         {
-            System.out.println("Nothing removed.");
+            System.out.println("Item not found in cart. Nothing removed.");
         }
     }
 
@@ -83,12 +83,10 @@ public class ShoppingCart {
                 {
                     cartItems.get(pos).setPrice(0);
                 }
-
                 if (cartItems.get(pos).getQuantity() != 0)
                 {
                     cartItems.get(pos).setQuantity(0);
                 }
-
                 if (cartItems.get(pos).getDescription() != "none")
                 {
                     cartItems.get(pos).setDescription("none");
@@ -96,7 +94,6 @@ public class ShoppingCart {
                 break;
             }
         }
-
         if(!isFound)
         {
             System.out.println("Item not found in cart. Nothing modified.");
